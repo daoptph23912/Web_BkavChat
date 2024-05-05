@@ -1,0 +1,13 @@
+<% if (messages.success) { %>
+    <div class="alert alert-success show-alert" data-time="<%= time %>">
+        <%= messages.success %>
+            <span class="close-alert">x</span>
+    </div>
+    <% } %>
+
+        <% if (messages.error) { %>
+            <div class="alert alert-danger show-alert" data-time="<%= time %>">
+                <%= messages.error %>
+                    <span class="close-alert">x</span>
+            </div>
+            <% } %>
