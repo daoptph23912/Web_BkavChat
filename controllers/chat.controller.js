@@ -31,3 +31,20 @@ module.exports.index = async (req, res) => {
     chats: chats,
   });
 };
+module.exports.homeChat = async (req, res) => {
+  //lấy tất cả tên người dùng 
+  const allUsers = await User.find({}, "fullName");
+
+ 
+  // const userLogin = await User.findOne({email:req.session.userInfo.email});
+
+  // if (!userLogin) {
+  //   return res.status(401).send("Bạn chưa đăng nhập.");
+  // }
+
+  res.render("pages/chat", {
+    pageTitle: "Chat",
+    allUsers: allUsers.map((user) => user.fullName),
+    // userLogin:userLogin 
+  });
+};

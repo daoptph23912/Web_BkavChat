@@ -7,9 +7,10 @@ router.get("/register", controller.register);
 
 router.post("/register", validate.registerPost, controller.registerPost);
 
+
 router.get("/login", controller.login);
 
-router.get("/", controller.login);
+router.get("/", controller.index);
 
 router.post("/login", validate.loginPost, controller.loginPost);
 

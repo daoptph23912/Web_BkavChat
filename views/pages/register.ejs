@@ -1,445 +1,696 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <title>Đăng nhập</title>
-</head>
-<style>
+  </head>
+  <style>
     * {
-        margin: 0;
-        padding: 0;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-        max-width: 100%;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        background-color: #F6F6F6;
-
+      max-width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-color: #f6f6f6;
     }
 
     .null {
-        flex-grow: 1;
+      flex-grow: 1;
     }
 
     .header {
-        width: 100%;
+      width: 100%;
     }
 
-    .header>img {
-        padding: 15px 0 15px 35px;
-        width: 100px;
+    .header > img {
+      padding: 15px 0 15px 35px;
+      width: 100px;
     }
 
     .content {
-        width: 100%;
-        flex-grow: 1;
+      width: 100%;
+      flex-grow: 1;
     }
 
-    .content>.container {
-        width: 80%;
-        height: 100%;
-        margin: auto;
-        display: flex;
-        flex-direction: row;
-        gap: 0px;
+    .content > .container {
+      width: 80%;
+      height: 100%;
+      margin: auto;
+      display: flex;
+      flex-direction: row;
+      gap: 0px;
     }
 
-    .content>.container>.sub-container {
-        flex: 1;
+    .content > .container > .sub-container {
+      flex: 1;
     }
 
-    .content>.container>.description {
-        width: 100%;
-        margin-top: 0px;
+    .content > .container > .description {
+      width: 100%;
+      margin-top: 0px;
     }
 
-    .content>.container>.description>.text-des {
-        align-items: center;
-        position: relative;
+    .content > .container > .description > .text-des {
+      align-items: center;
+      position: relative;
     }
 
-    .content>.container>.description>.text-des>.background {
-        width: 450px;
-        height: 450px;
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: -1;
+    .content > .container > .description > .text-des > .background {
+      width: 450px;
+      height: 450px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: -1;
     }
 
-    .content>.container>.description>.text-des>.background>.circle-blur {
-        width: 1px;
-        height: 1px;
-        border-radius: 50%;
-        /* Tạo hình tròn */
-        background-color: #4461F2;
-        /* Màu nền của hình tròn */
-        box-shadow: 0 0 100px 100px rgba(68, 97, 242, 0.3);
-        /* Tạo shadow với độ mờ và màu tương tự như nền */
+    .content
+      > .container
+      > .description
+      > .text-des
+      > .background
+      > .circle-blur {
+      width: 1px;
+      height: 1px;
+      border-radius: 50%;
+      /* Tạo hình tròn */
+      background-color: #4461f2;
+      /* Màu nền của hình tròn */
+      box-shadow: 0 0 100px 100px rgba(68, 97, 242, 0.3);
+      /* Tạo shadow với độ mờ và màu tương tự như nền */
     }
 
-    .content>.container>.description>.text-des>.content-text-des {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
+    .content > .container > .description > .text-des > .content-text-des {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
     }
 
-    .content>.container>.description>.text-des>.content-text-des>.title>h2 {
-        font-family: "Roboto", sans-serif;
-        font-size: 58px;
-        font-weight: 400;
-        line-height: 77px;
+    .content
+      > .container
+      > .description
+      > .text-des
+      > .content-text-des
+      > .title
+      > h2 {
+      font-family: "Roboto", sans-serif;
+      font-size: 58px;
+      font-weight: 400;
+      line-height: 77px;
     }
 
-    .content>.container>.description>.text-des>.content-text-des>.text>span {
-        font-family: "Roboto", sans-serif;
-        font-size: 23px;
-        font-weight: 400;
-        line-height: 26.95px;
+    .content
+      > .container
+      > .description
+      > .text-des
+      > .content-text-des
+      > .text
+      > span {
+      font-family: "Roboto", sans-serif;
+      font-size: 23px;
+      font-weight: 400;
+      line-height: 26.95px;
     }
 
-    .content>.container>.description>.text-des>.content-text-des>.text>span>span {
-        color: #6C83F1;
+    .content
+      > .container
+      > .description
+      > .text-des
+      > .content-text-des
+      > .text
+      > span
+      > span {
+      color: #6c83f1;
     }
 
-    .content>.container>.description>.text-des>.content-text-des>.text>span>span:hover {
-        cursor: pointer;
+    .content
+      > .container
+      > .description
+      > .text-des
+      > .content-text-des
+      > .text
+      > span
+      > span:hover {
+      cursor: pointer;
     }
 
-    .content>.container>.background-image {
-        margin-top: 20px;
+    .content > .container > .background-image {
+      margin-top: 20px;
     }
 
-    .content>.container>.background-image>img {
-        width: 90%;
+    .content > .container > .background-image > img {
+      width: 90%;
     }
 
-    .content>.container>.div-form {
-        display: flex;
-        flex-direction: column;
-        gap: 150px;
+    .content > .container > .div-form {
+      display: flex;
+      flex-direction: column;
+      gap: 150px;
     }
 
-    .content>.container>.div-form>.header {
-        display: flex;
-        gap: 15px;
+    .content > .container > .div-form > .header {
+      display: flex;
+      gap: 15px;
     }
 
-    .content>.container>.div-form>.header>.choose-language>#choose-language {
-        height: 100%;
-        border: 0;
-        background-color: transparent;
-        font-family: "Roboto", sans-serif;
-        font-size: 17px;
-        font-weight: 500;
-        line-height: 19.92px;
-        letter-spacing: 6%;
+    .content
+      > .container
+      > .div-form
+      > .header
+      > .choose-language
+      > #choose-language {
+      height: 100%;
+      border: 0;
+      background-color: transparent;
+      font-family: "Roboto", sans-serif;
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 19.92px;
+      letter-spacing: 6%;
     }
 
-    .content>.container>.div-form>.header>.choose-language>#choose-language:focus {
-        outline: none;
+    .content
+      > .container
+      > .div-form
+      > .header
+      > .choose-language
+      > #choose-language:focus {
+      outline: none;
     }
 
-    .content>.container>.div-form>.header>.choose-page {
-        display: flex;
+    .content > .container > .div-form > .header > .choose-page {
+      display: flex;
     }
 
-    .content>.container>.div-form>.header>.choose-page>.btn-choose-page {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .content
+      > .container
+      > .div-form
+      > .header
+      > .choose-page
+      > .btn-choose-page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .content>.container>.div-form>.header>.choose-page>.btn-choose-page>.content-btn {
-        padding: 8px 15px;
-        border-radius: 21px;
-        background-color: #FFFFFF;
+    .content
+      > .container
+      > .div-form
+      > .header
+      > .choose-page
+      > .btn-choose-page
+      > .content-btn {
+      padding: 8px 15px;
+      border-radius: 21px;
+      background-color: #ffffff;
     }
 
-
-    .content>.container>.div-form>.form {
-        display: flex;
+    .content > .container > .div-form > .form {
+      display: flex;
     }
 
-    .content>.container>.div-form>.form>.form-1 {
-        display: flex;
-        flex-direction: column;
+    .content > .container > .div-form > .form > .form-1 {
+      display: flex;
+      flex-direction: column;
     }
 
-    .content>.container>.div-form>.form>.form-1>form {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+    .content > .container > .div-form > .form > .form-1 > form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
 
-    .content>.container>.div-form>.form>.form-1>form>.form-control {
-        display: flex;
-        width: 400px;
-        height: 60px;
-        background-color: #EAF0F7;
-        border-radius: 10px;
+    .content > .container > .div-form > .form > .form-1 > form > .form-control {
+      display: flex;
+      width: 400px;
+      height: 60px;
+      background-color: #eaf0f7;
+      border-radius: 10px;
     }
 
-    .content>.container>.div-form>.form>.form-1>form>.form-control>input {
-        flex-grow: 1;
-        border: 0;
-        margin: 0;
-        padding: 0;
-        border-radius: 10px;
-        background-color: transparent;
-        padding-left: 15px;
-        box-sizing: border-box;
-        font-family: "Roboto", sans-serif;
-        font-size: 18px;
-        font-weight: 500;
-        line-height: 77px;
+    .content
+      > .container
+      > .div-form
+      > .form
+      > .form-1
+      > form
+      > .form-control
+      > input {
+      flex-grow: 1;
+      border: 0;
+      margin: 0;
+      padding: 0;
+      border-radius: 10px;
+      background-color: transparent;
+      padding-left: 15px;
+      box-sizing: border-box;
+      font-family: "Roboto", sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 77px;
     }
 
-    .content>.container>.div-form>.form>.form-1>form>.form-control>input[type='text'] {
-        letter-spacing: 9%;
+    .content
+      > .container
+      > .div-form
+      > .form
+      > .form-1
+      > form
+      > .form-control
+      > input[type="text"] {
+      letter-spacing: 9%;
     }
 
-    .content>.container>.div-form>.form>.form-1>form>.form-control>input:focus {
-        outline: none;
+    .content
+      > .container
+      > .div-form
+      > .form
+      > .form-1
+      > form
+      > .form-control
+      > input:focus {
+      outline: none;
     }
 
-    .content>.container>.div-form>.form>.form-1>form>.form-control>.option {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 10px;
+    .content
+      > .container
+      > .div-form
+      > .form
+      > .form-1
+      > form
+      > .form-control
+      > .option {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 10px;
     }
 
-    .content>.container>.div-form>.form>.form-1>form>.form-control>.option>img:hover {
-        cursor: pointer;
+    .content
+      > .container
+      > .div-form
+      > .form
+      > .form-1
+      > form
+      > .form-control
+      > .option
+      > img:hover {
+      cursor: pointer;
     }
 
-    .option>img {
-        width: 30px;
+    .option > img {
+      width: 30px;
     }
 
-    .content>.container>.div-form>.form>.form-1>form>.div-forgot-password {
-        display: flex;
-        justify-content: end;
-        padding-right: 20px;
+    .content
+      > .container
+      > .div-form
+      > .form
+      > .form-1
+      > form
+      > .div-forgot-password {
+      display: flex;
+      justify-content: end;
+      padding-right: 20px;
     }
 
-    .content>.container>.div-form>.form>.form-1>form>.div-forgot-password>span {
-        font-family: "Roboto", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: #C7C7C7;
+    .content
+      > .container
+      > .div-form
+      > .form
+      > .form-1
+      > form
+      > .div-forgot-password
+      > span {
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: #c7c7c7;
     }
 
-    .content>.container>.div-form>.form>.form-1>form>.div-forgot-password>span:hover {
-        cursor: pointer;
-        text-decoration: underline;
+    .content
+      > .container
+      > .div-form
+      > .form
+      > .form-1
+      > form
+      > .div-forgot-password
+      > span:hover {
+      cursor: pointer;
+      text-decoration: underline;
     }
 
-    .content>.container>.div-form>.form>.form-1>form>.div-btn-submit {
-        margin-top: 30px;
+    .content
+      > .container
+      > .div-form
+      > .form
+      > .form-1
+      > form
+      > .div-btn-submit {
+      margin-top: 30px;
     }
 
-    .content>.container>.div-form>.form>.form-1>form>.div-btn-submit>button {
-        width: 100%;
-        height: 60px;
-        border: 0;
-        border-radius: 10px;
-        background-color: #4461F2;
-        color: #FFFFFF;
-        box-shadow: 0 12px 21px 4px rgba(68, 97, 242, 0.15);
-        font-family: "Roboto", sans-serif;
-        font-size: 19px;
-        font-weight: 700;
-        letter-spacing: 9%;
+    .content
+      > .container
+      > .div-form
+      > .form
+      > .form-1
+      > form
+      > .div-btn-submit
+      > button {
+      width: 100%;
+      height: 60px;
+      border: 0;
+      border-radius: 10px;
+      background-color: #4461f2;
+      color: #ffffff;
+      box-shadow: 0 12px 21px 4px rgba(68, 97, 242, 0.15);
+      font-family: "Roboto", sans-serif;
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: 9%;
     }
 
-    .content>.container>.div-form>.form>.form-1>form>.div-btn-submit>button:hover {
-        cursor: pointer;
+    .content
+      > .container
+      > .div-form
+      > .form
+      > .form-1
+      > form
+      > .div-btn-submit
+      > button:hover {
+      cursor: pointer;
     }
 
-    .content>.container>.div-form>.form>.form-1>.other-connect {
-        display: flex;
-        flex-direction: column;
-        margin-top: 20px;
+    .content > .container > .div-form > .form > .form-1 > .other-connect {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
     }
 
-    .content>.container>.div-form>.form>.form-1>.other-connect>.header {
-        display: flex;
-        align-items: center;
+    .content
+      > .container
+      > .div-form
+      > .form
+      > .form-1
+      > .other-connect
+      > .header {
+      display: flex;
+      align-items: center;
     }
 
-    .content>.container>.div-form>.form>.form-1>.other-connect>.header>div {
-        flex: 1;
+    .content
+      > .container
+      > .div-form
+      > .form
+      > .form-1
+      > .other-connect
+      > .header
+      > div {
+      flex: 1;
     }
 
-    .content>.container>.div-form>.form>.form-1>.other-connect>.header>.line {
-        width: 120px;
-        height: 0;
-        border: 1px solid rgba(223, 223, 223, 1);
+    .content
+      > .container
+      > .div-form
+      > .form
+      > .form-1
+      > .other-connect
+      > .header
+      > .line {
+      width: 120px;
+      height: 0;
+      border: 1px solid rgba(223, 223, 223, 1);
     }
 
-    .content>.container>.div-form>.form>.form-1>.other-connect>.header>.title {
-        display: flex;
-        justify-content: center;
-        font-family: "Roboto", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 77px;
-        letter-spacing: 9%;
-        color: rgba(172, 173, 172, 1);
+    .content
+      > .container
+      > .div-form
+      > .form
+      > .form-1
+      > .other-connect
+      > .header
+      > .title {
+      display: flex;
+      justify-content: center;
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 77px;
+      letter-spacing: 9%;
+      color: rgba(172, 173, 172, 1);
     }
 
-    .content>.container>.div-form>.form>.form-1>.other-connect>.content {
-        display: flex;
-        gap: 20px;
+    .content
+      > .container
+      > .div-form
+      > .form
+      > .form-1
+      > .other-connect
+      > .content {
+      display: flex;
+      gap: 20px;
     }
 
-    .content>.container>.div-form>.form>.form-1>.other-connect>.content>div {
-        flex: 1;
-        width: 117px;
-        height: 60px;
-        border: 1px solid rgba(221, 223, 221, 1);
-        border-radius: 10px;
-        color: rgba(246, 246, 246, 1);
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .content
+      > .container
+      > .div-form
+      > .form
+      > .form-1
+      > .other-connect
+      > .content
+      > div {
+      flex: 1;
+      width: 117px;
+      height: 60px;
+      border: 1px solid rgba(221, 223, 221, 1);
+      border-radius: 10px;
+      color: rgba(246, 246, 246, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .content>.container>.div-form>.form>.form-1>.other-connect>.content>div:hover {
-        cursor: pointer;
+    .content
+      > .container
+      > .div-form
+      > .form
+      > .form-1
+      > .other-connect
+      > .content
+      > div:hover {
+      cursor: pointer;
     }
 
     .item {
-        display: flex;
+      display: flex;
     }
 
-    .item>img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
+    .item > img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
     }
 
     .link-style {
-        font-size: 17px;
-        font-weight: 700;
-        line-height: 19.92px;
-        letter-spacing: 6%;
-        color: #4461F2;
-        text-decoration: none;
-        position: relative;
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 19.92px;
+      letter-spacing: 6%;
+      color: #4461f2;
+      text-decoration: none;
+      position: relative;
     }
 
     .link-style.active::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -3px;
-        width: 100%;
-        height: 2px;
-        background-color: #4461F2;
-        transition: width 0.3s ease;
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 100%;
+      height: 2px;
+      background-color: #4461f2;
+      transition: width 0.3s ease;
     }
 
     .link-style:hover::after {
-        width: 100%;
+      width: 100%;
     }
 
     .btn-choose-page {
-        display: inline-block;
-        position: relative;
+      display: inline-block;
+      position: relative;
     }
-</style>
+    .textbtn {
+      font-size: 20px;
+      margin-left: 10px;
+    }
+  </style>
 
-<body>
+  <body>
     <header class="header">
-        <img src="images/logo.png" alt="Logo">
+      <img src="images/logo.png" alt="Logo" />
     </header>
     <nav class="content">
-        <article class="container">
-            <div class="background-image sub-container">
-                <img src="../images/image2.png" alt="Background image signin">
+      <article class="container">
+        <div class="background-image sub-container">
+          <img src="../images/image2.png" alt="Background image signin" />
+        </div>
+        <div class="div-form sub-container">
+          <div class="header">
+            <div class="null"></div>
+            <div class="choose-language">
+              <select name="choose-language" id="choose-language">
+                <option value="vi">Tiếng Việt</option>
+                <option value="en">English</option>
+              </select>
             </div>
-            <div class="div-form sub-container">
-                <div class="header">
-                    <div class="null"></div>
-                    <div class="choose-language">
-                        <select name="choose-language" id="choose-language">
-                            <option value="vi">Tiếng Việt</option>
-                            <option value="en">English</option>
-                        </select>
-                    </div>
-                    <div class="choose-page">
-                        <div class="btn-choose-page btn-signin">
-                            <div class="content-btn">
-                                <a class="link-style" href="/login">Đăng nhập</a>
-                            </div>
-                            <div class="line-bottom"></div>
-                        </div>
-                        <div class="btn-choose-page btn-signup">
-                            <div class="content-btn">
-                                <a class="link-style" href="/register">Đăng ký</a>
-                            </div>
-                            <div class="line-bottom"></div>
-                        </div>
-                    </div>
-
+            <div class="choose-page">
+              <div class="btn-choose-page btn-signin">
+                <div class="content-btn">
+                  <a class="link-style" href="/login">Đăng nhập</a>
                 </div>
-                <div class="form">
-                    <div class="null"></div>
-                    <div class="form-1">
-                        <form method="post">
-                            <div class="form-control">
-
-                                <input type="text" id="fullName" name="fullName" required
-                                    placeholder="Nhập tên người dùng">
-                                <div class="option">
-                                    <img src="../images/x.png" alt="Delete">
-                                </div>
-                            </div>
-                            <div class="form-control">
-
-                                <input type="email" id="email" name="email" required placeholder="Nhập tài khoản">
-                                <div class="option">
-                                    <img src="../images/x.png" alt="Delete">
-                                </div>
-                            </div>
-                            <div class="form-control">
-                                <input type="password" class="form-control" id="password" name="password" required
-                                    placeholder="Mật khẩu">
-                                <div class="option">
-                                    <img src="../images/eye.png" alt="Show">
-                                </div>
-                            </div>
-                            <div class="form-control">
-                                <input type="password" class="form-control" id="password" name="password" required
-                                    placeholder="Nhập lại mật khẩu">
-                                <div class="option">
-                                    <img src="../images/eye.png" alt="Show">
-                                </div>
-                            </div>
-                            <div class="div-btn-submit">
-                                <button type="submit">Đăng ký</button>
-                            </div>
-                        </form>
-
-                    </div>
+                <div class="line-bottom"></div>
+              </div>
+              <div class="btn-choose-page btn-signup">
+                <div class="content-btn">
+                  <a class="link-style" href="/register">Đăng ký</a>
                 </div>
+                <div class="line-bottom"></div>
+              </div>
             </div>
-        </article>
+          </div>
+          <div class="form">
+            <div class="null"></div>
+            <div class="form-1">
+              <form method="post">
+                <div class="form-control">
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    required
+                    placeholder="Nhập tên người dùng"
+                  />
+                  <div class="option" id="deleteFullName">
+                    <img src="../images/x.png" alt="Delete" />
+                  </div>
+                </div>
+                <div class="form-control">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="Nhập tài khoản"
+                  />
+                  <div class="option" id="deleteEmail">
+                    <img src="../images/x.png" alt="Delete" />
+                  </div>
+                </div>
+                <div class="form-control">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    name="password"
+                    required
+                    placeholder="Mật khẩu"
+                  />
+                  <div class="option" id="togglePassword1">
+                    <img src="../images/eye.png" alt="Show" />
+                  </div>
+                </div>
+                <div class="form-control">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    required
+                    placeholder="Nhập lại mật khẩu"
+                  />
+                  <div class="option" id="togglePassword2">
+                    <img src="../images/eye.png" alt="Show" />
+                  </div>
+                </div>
+              
+                <div class="div-btn-submit">
+                  <button type="submit">Đăng ký</button>
+                </div>
+                <h2 style="font-size: 20px; text-align: center; color: red">
+                  <% if (locals.messages.error) { %>
+                  <div class="error-message"><%= locals.messages.error %></div>
+                  <% } %>
+                </h2>
+                <div class="textbtn">
+                  Đã có tài khoản, đăng nhập tại <a href="/login">đây</a>!
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </article>
     </nav>
-</body>
+    <script>
+      // Lấy biểu tượng xóa và trường nhập tên người dùng
+      const deleteFullName = document.getElementById("deleteFullName");
+      const fullNameInput = document.getElementById("fullName");
+
+      // Thêm sự kiện click vào biểu tượng xóa
+      deleteFullName.addEventListener("click", function () {
+        // Đặt giá trị của trường nhập tên người dùng thành rỗng
+        fullNameInput.value = "";
+      });
+
+      // Lấy biểu tượng xóa và trường nhập email
+      const deleteEmail = document.getElementById("deleteEmail");
+      const emailInput = document.getElementById("email");
+
+      // Thêm sự kiện click vào biểu tượng xóa
+      deleteEmail.addEventListener("click", function () {
+        // Đặt giá trị của trường nhập email thành rỗng
+        emailInput.value = "";
+      });
+      // Lấy biểu tượng eye và ô nhập mật khẩu
+      const togglePassword1 = document.getElementById("togglePassword1");
+      const togglePassword2 = document.getElementById("togglePassword2");
+      const passwordInput1 = document.getElementById("password");
+      const passwordInput2 = document.getElementById("confirmPassword");
+
+      // Thêm sự kiện click vào biểu tượng eye cho mật khẩu
+      togglePassword1.addEventListener("click", function () {
+        togglePassword(passwordInput1);
+      });
+
+      togglePassword2.addEventListener("click", function () {
+        togglePassword(passwordInput2);
+      });
+
+      // Hàm thay đổi kiểu của trường nhập mật khẩu
+      function togglePassword(inputField) {
+        // Kiểm tra kiểu của trường nhập mật khẩu
+        if (inputField.type === "password") {
+          // Nếu là "password", đổi thành "text" để hiển thị mật khẩu
+          inputField.type = "text";
+        } else {
+          // Ngược lại, đổi thành "password" để ẩn mật khẩu
+          inputField.type = "password";
+        }
+      } 
 
 
+    </script>
+  </body>
 </html>
