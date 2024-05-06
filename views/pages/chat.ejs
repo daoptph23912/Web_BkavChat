@@ -40,6 +40,7 @@
         list-style: none;
         padding: 0;
         margin: 0;
+        
       }
       .user-list li {
         padding: 20px;
@@ -53,7 +54,7 @@
         cursor: pointer;
         transition: background-color 0.3s;
       }
-      .user-list li:hover,
+      .user-list a:hover,
       .chat-area li:hover {
         background-color: #f9f9f9;
       }
@@ -137,7 +138,10 @@
         <h1 class="chat-left">Danh sách người dùng</h1>
         <ul class="user-chat">
           <% allUsers.forEach(function(user) { %>
-          <li><%= user %></li>
+            <li>
+          <a href="/chat/<%= user.roomChatId %>"><%= user %></a>
+
+            </li>
           <% }); %>
         </ul>
       </div>

@@ -6,7 +6,7 @@ module.exports.isAccess = async (req, res, next) => {
 
   console.log(roomChatId);
   console.log(userId);
-
+ 
   try {
     const isAccessRoomChat = await RoomChat.findOne({
       _id: roomChatId,
